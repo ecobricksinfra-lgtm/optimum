@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.acc-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 500ms;
+}
+
+.acc-content[aria-hidden="false"] {
+    grid-template-rows: 1fr;
+}
+
+.acc-content > div {
+    overflow: hidden;
+}
+
+/*Chrome*/
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    input[type="range"] {
+        overflow: hidden;
+        height: 6px;
+        border-radius: 50px;
+        width: 200px;
+        -webkit-appearance: none;
+        background-color: #eaf1f3;
+    }
+
+    input[type="range"]::-webkit-slider-runnable-track {
+        /* height: 5px; */
+        -webkit-appearance: none;
+        color: #13bba4;
+        margin-top: -1px;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        width: 10px;
+        -webkit-appearance: none;
+        border-radius: 50px;
+        height: 10px;
+        cursor: ew-resize;
+        background: black;
+        box-shadow: -158px 0 0 150px #8b5cf6;
+    }
+}
+/** FF*/
+input[type="range"]::-moz-range-progress {
+    background-color: #8b5cf6;
+}
+input[type="range"]::-moz-range-track {
+    background-color: #eaf1f3;
+}
+/* IE*/
+input[type="range"]::-ms-fill-lower {
+    background-color: #8b5cf6;
+}
+input[type="range"]::-ms-fill-upper {
+    background-color: #eaf1f3;
+}
